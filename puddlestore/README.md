@@ -28,9 +28,9 @@ If it is the first time you start the client, you will find that no child in Zoo
 create raft 3
 create tapestry 5
 ```
-![image](https://github.com/brown-csci1380/YimingLiBrown-YuqiChai-s19/blob/backup/puddlestore/image/first_client.png)
+![image](https://github.com/lymmm412/distributed_file_system/blob/master/puddlestore/image/first_client.png)
 You can open several clients and you will find that all the raft nodes and tapestry nodes have been stored in Zookeeper. At this time, however, you are not allowed to create raft nodes or tapestry nodes again. Now, you can use all other commands to play with our file system! You will find the sychronization among all these clients.
-![image](https://github.com/brown-csci1380/YimingLiBrown-YuqiChai-s19/blob/backup/puddlestore/image/new_client.png)
+![image](https://github.com/lymmm412/distributed_file_system/blob/master/puddlestore/image/new_client.png)
 ### Test
 We wrote all the major functions which perform basic file and directory operations in the file puddleclient/puddleclient.go. As it is separate from raft and tapestry module and we used TA implementation of these two modules in which case we assume is right, we only tested the functions that are written by ourselves. The logic is simple, run each function with both correct and maybe incorrect inputs to maximize the coverage. The overall coverage is about 83%. In order to test whether file data is still available when Tapestry node leaves or a new node is added, we added **addtap** and **removetap** commands.
 
